@@ -120,7 +120,7 @@ class SMTPEmailAlerter(EmailAlerterBase):
 
     msg["Subject"] = subject
 
-    from_address = self.AddEmailDomain(from_address)
+    from_address = self.AddFromEmailDomain(from_address)
     to_addresses = self.SplitEmailsAndAppendEmailDomain(to_addresses)
     cc_addresses = self.SplitEmailsAndAppendEmailDomain(cc_addresses or "")
 
