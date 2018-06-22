@@ -34,6 +34,14 @@ class EmailAlerterBase(object):
       return address + "@%s" % suffix
     return address
 
+  def AddFromEmailDomain(self, address):
+    suffix = config.CONFIG["Logging.from_domain"]
+    if isinstance(address, rdf_standard.DomainEmailAddress):
+      address = str(address)
+    if suffix and "@" not in address:
+      return address + "@%s" % suffix
+    return address
+
   def SplitEmailsAndAppendEmailDomain(self, address_list):
     """Splits a string of comma-separated emails, appending default domain."""
     result = []

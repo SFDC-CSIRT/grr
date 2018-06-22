@@ -9,6 +9,8 @@ config_lib.DEFINE_string("Logging.domain", "localhost",
                          "The email domain belonging to this installation. "
                          "Leave blank to not restrict email to this domain")
 
+config_lib.DEFINE_string("Logging.from_domain", "localhost", "The email domain emails will be sent from this install.")
+
 config_lib.DEFINE_list("Logging.engines", ["stderr"],
                        "Enabled logging engines. Valid values are "
                        "combinations of stderr,file,syslog,event_log.")
